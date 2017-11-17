@@ -1,6 +1,7 @@
 const textArea = document.getElementById('src')
 const split = document.getElementById('split')
 const swap = document.getElementById('swap')
+const original = document.getElementById('original')
 const output = document.getElementById('output')
 
 console.log('hehehe');
@@ -17,3 +18,4 @@ const filterWords = number => {
 
 split.addEventListener('click', () => output.innerHTML = filterWords(0))
 swap.addEventListener('click', () => output.innerHTML = filterWords(1))
+original.addEventListener('click', () => output.innerHTML = getValue())
