@@ -1,5 +1,6 @@
 .hidden {
   color: transparent;
+  border-bottom: 1px solid #000;
 }
 .hidden:hover {
   color: #000;
