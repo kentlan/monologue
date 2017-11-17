@@ -4,18 +4,21 @@ const swap = document.getElementById('swap')
 const original = document.getElementById('original')
 const output = document.getElementById('output')
 
-console.log('hehehe');
-
 const getValue = () => textArea.value
 
 const filterWords = number => {
+  output.innerHTML = ''
   const parsedText = getValue().split(' ')
   const newArr = parsedText.map((value, index, Arr) => {
-    return (index + number) % 2 == 0 ? value : '_'.repeat(value.length)
+    return (index + number) % 2 == 0
+      ? value
+      // : '_'.repeat(value.length)
+      : `<span class="hidden">${value}</span>`
   })
-  return newArr.join(' ')
+  return `<p>${newArr.join(' ')}</p>`
 }
 
-split.addEventListener('click', () => output.innerHTML = filterWords(0))
-swap.addEventListener('click', () => output.innerHTML = filterWords(1))
+split.addEventListener('click', () => output.insertAdjacentHTML('beforeend', filterWords(0)))
+swap.addEventListener('click', () => output.insertAdjacentHTML('beforeend', filterWords(1)))
+
 original.addEventListener('click', () => output.innerHTML = getValue())
