@@ -10,7 +10,7 @@ const getValue = () => textArea.value
 const filterWords = number => {
   const parsedText = getValue().split(' ')
   const newArr = parsedText.map((value, index, Arr) => {
-    return (index + number) % 2 == 0 ? value : '?'.repeat(value.length)
+    return (index + number) % 2 == 0 ? value : '_'.repeat(value.length)
   })
   return newArr.join(' ')
 }
